@@ -102,6 +102,37 @@
           }
         }
       }
+    },
+    "ngx-magic-controls": {
+      "projectType": "library",
+      "root": "projects/ngx-magic-controls",
+      "sourceRoot": "projects/ngx-magic-controls/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-magic-controls/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-magic-controls/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-magic-controls/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-magic-controls/src/test.ts",
+            "tsConfig": "projects/ngx-magic-controls/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-magic-controls/karma.conf.js"
+          }
+        }
+      }
     }
   }
 }
